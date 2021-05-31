@@ -54,8 +54,8 @@ h2{
 }
 
 #picture{
-    display: none;
-    grid-area: leftside; 
+    grid-area: leftside;
+    padding-top: 1em; 
 }
 
 #picture img{
@@ -63,13 +63,15 @@ h2{
 }
 
 #subscribe{
-    display: none;
     grid-area: rightside;
 }
 
 #connect{
-    display: none;
     grid-area: rightside;
+}
+
+.notdisplayed{
+    display: none;
 }
 
 .redisplay{
@@ -116,9 +118,10 @@ fieldset, form > button{
 }
 
 form > button{
+    display: block;
+    margin: auto;
+    width: 92%;
     background-color: #333;
     color: white;
     padding: .6em;
-    width: 92%;
-    margin: auto;
 }
