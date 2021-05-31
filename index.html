@@ -11,6 +11,47 @@
     <title>Authentifiez-vous</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav" id="subscription" tabindex="0">S'inscrire</li>
+                <li class="nav" id="connection" tabindex="0">Se connecter</li>
+                <li class="nav" id="disconnection" tabindex="0">Se déconnecter</li>
+            </ul>
+        </nav>
+        <h1>Bienvenue ! Inscrivez-vous ou connectez-vous</h1>
+    </header>
+    <section>
+        <h2>Contenu public</h2>
+            <form id="subscribe">
+                <h3>Inscription</h3>
+                <fieldset>
+                    <label for="emailSubscription">Entrez votre e-mail</label>
+                    <input type="email" name="email-subscription" id="emailSubscription">
+                </fieldset>
+                <fieldset>
+                    <label for="pwdSubscription">Entrez votre mot de passe</label>
+                    <input type="password" name="pwd-subscription" id="pwdSubscription">
+                </fieldset>
+                <button type="submit">Envoyer</button>
+            </form>
+
+            <form id="connect">
+                <h3>Connexion</h3>
+                <fieldset>
+                    <label for="emailConnection">Entrez votre e-mail</label>
+                    <input type="email" name="email-connection" id="emailConnection">
+                </fieldset>
+                <fieldset>
+                    <label for="pwdConnection">Entrez votre mot de passe</label>
+                    <input type="password" name="pwd-connection" id="pwdConnection">
+                </fieldset>
+                <button type="submit">Envoyer</button>
+            </form>
+    </section>
+    <footer>
+
+    </footer>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
@@ -37,17 +78,5 @@
     const auth = firebase.auth();
     const db = firebase.firestore();
     </script>
-
-    <header>
-        <nav>
-            <ul>
-                <li class="nav" id="subscription">S'inscrire</li>
-                <li class="nav" id="connection">Se connecter</li>
-                <li class="nav" id="disconnection">Se déconnecter</li>
-            </ul>
-        </nav>
-        <h1>Bienvenue ! Inscrivez-vous ou connectez-vous</h1>
-    </header>
-    
 </body>
 </html>
