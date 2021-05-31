@@ -53,12 +53,27 @@ h2{
     grid-area: title;
 }
 
+#picture{
+    display: none;
+    grid-area: leftside; 
+}
+
+#picture img{
+    width: 100%;
+}
+
 #subscribe{
-    grid-area: subscribe;
+    display: none;
+    grid-area: rightside;
 }
 
 #connect{
-    grid-area: connect;
+    display: none;
+    grid-area: rightside;
+}
+
+.redisplay{
+    display: block;
 }
 
 section{
@@ -70,7 +85,7 @@ section{
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     "title title"
-    "subscribe connect";
+    "leftside rightside";
     gap: .8em;
 }
 
