@@ -11,6 +11,33 @@
     <title>Authentifiez-vous</title>
 </head>
 <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script type="module">
+    // Your web app's Firebase configuration
+    import apiKeyFirebase from './src/js/api-key.js';
+
+    var firebaseConfig = {
+        apiKey: apiKeyFirebase,
+        authDomain: "authentication-js-9a432.firebaseapp.com",
+        projectId: "authentication-js-9a432",
+        storageBucket: "authentication-js-9a432.appspot.com",
+        messagingSenderId: "97579991833",
+        appId: "1:97579991833:web:6f0fc994cd3c311a1a7b88"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+
     <header>
         <nav>
             <ul>
