@@ -10,17 +10,21 @@ const $connect = document.querySelector("#connect");
 const $picture = document.querySelector("#picture");
 // Forms elements
 const $fieldEmailsub = document.querySelector("#fieldEmailsub");
-const $fieldPwdsub = document.querySelector("#fieldPwdsub");
+const $fieldPwdSub = document.querySelector("#fieldPwdSub");
 const $emailSubscription = document.querySelector("#emailSubscription");
 const $pwdSubscription = document.querySelector("#pwdSubscription");
+const $infoMailSub = document.querySelector("#infoMailSub");
+const $infoPwdSub = document.querySelector("#infoPwdSub");
 
 const $fieldEmailConnect = document.querySelector("#fieldEmailConnect");
 const $fieldPwdConnect = document.querySelector("#fieldPwdConnect");
 const $emailConnection = document.querySelector("#emailConnection");
 const $pwdConnection = document.querySelector("#pwdConnection");
+const $infoMailConx = document.querySelector("infoMailConx");
+const $infoPwdConx = document.querySelector("#infoPwdConx");
 
 
-
+// Listening all navigation's buttons
 $subscription.addEventListener("click", () => {
 
     if($connect.classList.contains("redisplay")){
@@ -48,11 +52,11 @@ $connection.addEventListener("click", () => {
 });
 
 // Validate input's user who is subscribing
-const validateSubscription = new Validation($fieldEmailsub, $fieldPwdsub, $emailSubscription, $pwdSubscription);
+const validateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);
 validateSubscription.validateEmail();
 validateSubscription.vadidatePassword();
 
 // Validate input's user who is connecting
-const validateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection);
+const validateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdSub);
 validateConnection.validateEmail();
 validateConnection.vadidatePassword();
