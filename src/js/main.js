@@ -20,7 +20,7 @@ const $fieldEmailConnect = document.querySelector("#fieldEmailConnect");
 const $fieldPwdConnect = document.querySelector("#fieldPwdConnect");
 const $emailConnection = document.querySelector("#emailConnection");
 const $pwdConnection = document.querySelector("#pwdConnection");
-const $infoMailConx = document.querySelector("infoMailConx");
+const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
 
 
@@ -29,34 +29,30 @@ $subscription.addEventListener("click", () => {
 
     if($connect.classList.contains("redisplay")){
         $connect.classList.replace("redisplay", "notdisplayed");
-        $subscribe.classList.replace("notdisplayed", "redisplay");
-        $picture.classList.replace("notdisplayed", "redisplay");
-    } else {
-        $subscribe.classList.replace("notdisplayed", "redisplay");
-        $picture.classList.replace("notdisplayed", "redisplay");
     }
-
+     
+    $subscribe.classList.replace("notdisplayed", "redisplay");
+    $picture.classList.replace("notdisplayed", "redisplay");
+ 
 });
 
 $connection.addEventListener("click", () => {
 
     if($subscribe.classList.contains("redisplay")){
         $subscribe.classList.replace("redisplay", "notdisplayed");
-        $connect.classList.replace("notdisplayed", "redisplay");
-        $picture.classList.replace("notdisplayed", "redisplay");
-    } else {
-        $connect.classList.replace("notdisplayed", "redisplay");
-        $picture.classList.replace("notdisplayed", "redisplay");
     }
 
+    $connect.classList.replace("notdisplayed", "redisplay");
+    $picture.classList.replace("notdisplayed", "redisplay");
+    
 });
 
 // Validate input's user who is subscribing
 const validateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);
 validateSubscription.validateEmail();
-validateSubscription.vadidatePassword();
+validateSubscription.validatePassword();
 
 // Validate input's user who is connecting
-const validateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdSub);
+const validateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdConx);
 validateConnection.validateEmail();
-validateConnection.vadidatePassword();
+validateConnection.validatePassword();
