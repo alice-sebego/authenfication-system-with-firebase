@@ -1,4 +1,5 @@
 import Validation from './validation-input.js';
+import Navigation from './navigation.js';
 
 ///// Elements of DOM
 const $subscription = document.querySelector("#subscription");
@@ -25,27 +26,9 @@ const $infoPwdConx = document.querySelector("#infoPwdConx");
 
 
 // Listening all navigation's buttons
-$subscription.addEventListener("click", () => {
-
-    if($connect.classList.contains("redisplay")){
-        $connect.classList.replace("redisplay", "notdisplayed");
-    }
-     
-    $subscribe.classList.replace("notdisplayed", "redisplay");
-    $picture.classList.replace("notdisplayed", "redisplay");
- 
-});
-
-$connection.addEventListener("click", () => {
-
-    if($subscribe.classList.contains("redisplay")){
-        $subscribe.classList.replace("redisplay", "notdisplayed");
-    }
-
-    $connect.classList.replace("notdisplayed", "redisplay");
-    $picture.classList.replace("notdisplayed", "redisplay");
-    
-});
+const NavApp = new Navigation($subscription, $connection, $subscribe, $connect, $picture);
+NavApp.subscriptionClick();
+NavApp.connectionClick();
 
 // Validate input's user who is subscribing
 const validateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);

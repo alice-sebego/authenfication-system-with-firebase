@@ -18,12 +18,12 @@ export default class Validation{
         this.email.addEventListener("input", () =>{
 
             if(regex.email.test(this.email.value)){
-                console.log("ok");
+                
                 this.infoMail.style.color = "green"
                 this.infoMail.innerHTML = `Votre adresse e-mail est valide`;
 
             } else {
-                console.log("votre email n'est pas valide");
+                
                 this.infoMail.style.color = "red"
                 this.infoMail.innerHTML = `Votre adresse e-mail n'est pas valide`;
             }
@@ -39,12 +39,12 @@ export default class Validation{
                regex.lowcasePresence.test(this.password.value) &&
                regex.uppercasePresence.test(this.password.value)
             ){
-                console.log("ok");
+                
                 this.infoPwd.style.color = "green";
                 this.infoPwd.innerHTML = `Votre mot de passe est valide`;
 
             } else {
-                console.log("Votre mdp doit contenir au moins 1 minuscule, 1 majuscule, 1 chiffre et avoir 8 caractères");
+               
                 this.infoPwd.style.color = "red";
                 this.infoPwd.innerHTML = `Votre mdp doit contenir au moins 1 minuscule, 1 majuscule, 1 chiffre et avoir 8 caractères`;
             }
