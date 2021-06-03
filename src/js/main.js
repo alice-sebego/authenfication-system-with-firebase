@@ -39,9 +39,8 @@ ValidateSubscription.validatePassword();
 // Validate input's user who is connecting
 const ValidateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdConx);
 ValidateConnection.validateEmail();
-ValidateConnection.validatePassword();
 
-// Submit subscription's form
+// Submit Subscription's form
 $subscribe.addEventListener("submit", e => {
 
     e.preventDefault();
@@ -54,10 +53,31 @@ $subscribe.addEventListener("submit", e => {
         });
 
         $subscribe.reset();
+        $subscribe.classList.replace("redisplay", "notdisplayed");
+
+    } else {
+
+        console.log("email et mdp invalides");
+
+    }
+});
+
+// Submit Connection's form
+$connect.addEventListener("submit", e => {
+
+    e.preventDefault();
+
+    if(ValidateConnection.isEmailvalid){
+
+        auth.signInWithEmailAndPassword($emailConnection.value, $pwdConnection.value).
+        then( cred => console.log("Vous êtes connecté(e) "+ cred.user) );
+
+        $connect.reset();
+        $connect.classList.replace("redisplay", "notdisplayed");
         
     } else {
 
         console.log("email et mdp invalides");
 
     }
-})
+});
