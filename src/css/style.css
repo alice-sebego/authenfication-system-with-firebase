@@ -25,7 +25,6 @@ nav ul{
 
 .nav{
     list-style-type: none;
-    /* display: inline-block; */
     padding: 1em;
     text-transform: uppercase;
     color: #fff;
@@ -48,7 +47,7 @@ h1{
     font-size: 3vw;
 }
 
-h2{
+h3{
     justify-self: center;
     grid-area: title;
 }
@@ -78,7 +77,12 @@ h2{
     display: block;
 }
 
-section{
+#acces{
+    margin: 5vh auto;
+    width: 65%;
+}
+
+#forms{
     width: 60%;
     margin: 5vh auto;
     background-color: #ddd;

@@ -1,12 +1,13 @@
 import Validation from './validation-input.js';
 import Navigation from './navigation.js';
-import {auth, db} from './firebaseconfig.js';
+import {auth} from './firebaseconfig.js';
 
 ///// Elements of DOM
 const $subscription = document.querySelector("#subscription");
 const $connection = document.querySelector("#connection");
 const $disconnection = document.querySelector("#disconnection");
 const $h2 = document.querySelector("h2");
+const $h3 = document.querySelector("#forms > h3");
 const $subscribe = document.querySelector("#subscribe");
 const $connect = document.querySelector("#connect");
 const $picture = document.querySelector("#picture");
@@ -24,7 +25,8 @@ const $emailConnection = document.querySelector("#emailConnection");
 const $pwdConnection = document.querySelector("#pwdConnection");
 const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
-
+// Content of main
+const $main = document.querySelector("main");
 
 // Listening subscription and connection buttons
 const NavApp = new Navigation($subscription, $connection, $subscribe, $connect, $picture);
@@ -53,13 +55,19 @@ $subscribe.addEventListener("submit", e => {
         });
 
         $subscribe.reset();
+
         $subscribe.classList.replace("redisplay", "notdisplayed");
+        $picture.classList.replace("redisplay", "notdisplayed");
+        
+        $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
+        $h3.innerHTML = `Vous êtes inscrit(e)`;
 
     } else {
 
         console.log("email et mdp invalides");
 
     }
+
 });
 
 // Submit Connection's form
@@ -74,12 +82,17 @@ $connect.addEventListener("submit", e => {
 
         $connect.reset();
         $connect.classList.replace("redisplay", "notdisplayed");
+        $picture.classList.replace("redisplay", "notdisplayed");
         
+        $h2.innerHTML = `Vous avez accès à ce contenu`;
+        $h3.innerHTML = `Vous êtes connecté(e)`;
+
     } else {
 
-        console.log("email et mdp invalides");
+        console.log("email et mdp incorrects");
 
     }
+
 });
 
 // Manage Disconnection's user
@@ -87,4 +100,8 @@ $disconnection.addEventListener("click", () => {
     
     auth.signOut().
     then(() => console.log("Vous êtes déconnecté(e)"));
-})
+
+    $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
+    $h3.innerHTML = `Vous êtes déconnecté(e)`;
+
+});

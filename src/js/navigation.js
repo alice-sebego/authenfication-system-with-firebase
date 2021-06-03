@@ -7,12 +7,12 @@ export default class Navigation{
         this.subscriptionForm = subscriptionForm;
         this.connectionForm = connectionForm;
         this.picture = picture;
-        
+
     }
 
     subscriptionClick(){
         this.subscriptionBtn.addEventListener("click", () => {
-            
+
             if(this.connectionForm.classList.contains("redisplay")){
                 this.connectionForm.classList.replace("redisplay", "notdisplayed");
             }
@@ -25,7 +25,7 @@ export default class Navigation{
 
     connectionClick(){
         this.connectionBtn.addEventListener("click", () => {
-            
+
             if(this.subscriptionForm.classList.contains("redisplay")){
                 this.subscriptionForm.classList.replace("redisplay", "notdisplayed");
             }
