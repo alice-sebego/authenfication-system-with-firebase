@@ -1,11 +1,13 @@
 export default class Navigation{
     
     constructor(subscriptionBtn, connectionBtn, subscriptionForm, connectionForm, picture){
+        
         this.subscriptionBtn = subscriptionBtn;
         this.connectionBtn = connectionBtn;
         this.subscriptionForm = subscriptionForm;
         this.connectionForm = connectionForm;
         this.picture = picture;
+        
     }
 
     subscriptionClick(){
@@ -33,4 +35,5 @@ export default class Navigation{
             
         });
     }
+
 }

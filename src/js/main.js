@@ -26,7 +26,7 @@ const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
 
 
-// Listening all navigation's buttons
+// Listening subscription and connection buttons
 const NavApp = new Navigation($subscription, $connection, $subscribe, $connect, $picture);
 NavApp.subscriptionClick();
 NavApp.connectionClick();
@@ -81,3 +81,10 @@ $connect.addEventListener("submit", e => {
 
     }
 });
+
+// Manage Disconnection's user
+$disconnection.addEventListener("click", () => {
+    
+    auth.signOut().
+    then(() => console.log("Vous êtes déconnecté(e)"));
+})
