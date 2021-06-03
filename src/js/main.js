@@ -1,6 +1,5 @@
 import Validation from './validation-input.js';
 import Navigation from './navigation.js';
-import {auth, db} from './firebaseconfig.js';
 
 ///// Elements of DOM
 const $subscription = document.querySelector("#subscription");
@@ -32,31 +31,11 @@ NavApp.subscriptionClick();
 NavApp.connectionClick();
 
 // Validate input's user who is subscribing
-const ValidateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);
-ValidateSubscription.validateEmail();
-ValidateSubscription.validatePassword();
+const validateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);
+validateSubscription.validateEmail();
+validateSubscription.validatePassword();
 
 // Validate input's user who is connecting
-const ValidateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdConx);
-ValidateConnection.validateEmail();
-ValidateConnection.validatePassword();
-
-// Submit subscription's form
-$subscribe.addEventListener("submit", e => {
-
-    e.preventDefault();
-
-    if(ValidateSubscription.isEmailValid && ValidateSubscription.isPasswordValid){
-        
-        auth.createUserWithEmailAndPassword($emailSubscription.value, $pwdSubscription.value).
-        then(cred => {
-            console.log(cred)
-        });
-
-        $subscribe.reset();
-    
-    } else {
-
-        console.log("email ou mdp invalide");
-    }
-})
+const validateConnection = new Validation($fieldEmailConnect, $fieldPwdConnect, $emailConnection, $pwdConnection, $infoMailConx, $infoPwdConx);
+validateConnection.validateEmail();
+validateConnection.validatePassword();
