@@ -129,3 +129,43 @@ form > button{
     color: white;
     padding: .6em;
 }
+
+@media screen and (max-width: 700px){
+    #forms{
+        width: 60%;
+        margin: 5vh auto;
+        padding: 0.5em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "leftside"
+        "rightside";
+        gap: .1em;
+    }
+}
+
+@media screen and (max-width: 465px){
+    #forms{
+        width: 90%;
+        margin: 4vh auto;
+        padding: 0.5em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "title"
+        "leftside"
+        "rightside";
+        gap: .08em;
+    }
+
+    h1{
+        font-size: 5vw;
+
+    }
+
+    .nav{
+        font-size: 0.8em;
+        padding: 0.2em;
+    }
+}
