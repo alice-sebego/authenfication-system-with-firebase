@@ -1,5 +1,17 @@
 import * as regex from './regex.js';
 
+/**
+ * Validate input's of form
+ * @class Validation
+ * @param {Boolean} isEmailvalid
+ * @param {Boolean} isPasswordValid
+ * @param {HTMLFieldSetElement} fieldsetEmail
+ * @param {HTMLFieldSetElement} fieldsetPwd
+ * @param {HTMLInputElement} email
+ * @param {HTMLInputElement} password
+ * @param {HTMLParagraphElement} infoMail
+ * @param {HTMLParagraphElement} infoPwd
+ */
 export default class Validation{
     
     isEmailvalid;

@@ -1,3 +1,12 @@
+/**
+ * Manage event's click on subscription and connection buttons
+ * @class Navigation
+ * @param {HTMLButtonElement} subscriptionBtn
+ * @param {HTMLButtonElement} connectionBtn
+ * @param {HTMLFormElement} subscriptionForm
+ * @param {HTMLFormElement} connectionForm
+ * @param {HTMLPictureElement} picture
+ */
 export default class Navigation{
     
     constructor(subscriptionBtn, connectionBtn, subscriptionForm, connectionForm, picture){

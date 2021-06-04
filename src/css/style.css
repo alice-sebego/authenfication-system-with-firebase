@@ -130,7 +130,10 @@ form > button{
     padding: .6em;
 }
 
+
+/* Responsive display */
 @media screen and (max-width: 700px){
+
     #forms{
         width: 60%;
         margin: 5vh auto;
@@ -143,9 +146,11 @@ form > button{
         "rightside";
         gap: .1em;
     }
+
 }
 
 @media screen and (max-width: 465px){
+
     #forms{
         width: 90%;
         margin: 4vh auto;
@@ -168,4 +173,5 @@ form > button{
         font-size: 0.8em;
         padding: 0.2em;
     }
+
 }
