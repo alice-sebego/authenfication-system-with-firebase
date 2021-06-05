@@ -2,16 +2,21 @@ import Validation from './validation-input.js';
 import Navigation from './navigation.js';
 import {auth} from './firebaseconfig.js';
 
-///// Elements of DOM
+// ---- Elements of DOM ---- //
+
+// Navigation
+const $navigationBar = document.querySelector("nav > button");
+const $navigationUl = document.querySelector("nav > ul");
 const $subscription = document.querySelector("#subscription");
 const $connection = document.querySelector("#connection");
 const $disconnection = document.querySelector("#disconnection");
 const $h2 = document.querySelector("h2");
+// Forms elements
 const $h3 = document.querySelector("#forms > h3");
 const $subscribe = document.querySelector("#subscribe");
 const $connect = document.querySelector("#connect");
 const $picture = document.querySelector("#picture");
-// Forms elements
+// Forms inputs
 const $fieldEmailsub = document.querySelector("#fieldEmailsub");
 const $fieldPwdSub = document.querySelector("#fieldPwdSub");
 const $emailSubscription = document.querySelector("#emailSubscription");
@@ -105,3 +110,8 @@ $disconnection.addEventListener("click", () => {
     $h3.innerHTML = `Vous êtes déconnecté(e)`;
 
 });
+
+// Handle behavior of navigation when window's width < 465 px 
+if(window.innerWidth < 465){ $navigationUl.classList.add("notdisplayed") }
+
+$navigationBar.addEventListener("click", () => $navigationUl.classList.toggle("notdisplayed"));
