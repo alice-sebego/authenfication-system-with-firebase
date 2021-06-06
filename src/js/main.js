@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Validation from './validation-input.js';
 import Navigation from './navigation.js';
 import {auth} from './firebaseconfig.js';
