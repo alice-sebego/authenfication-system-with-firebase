@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import Validation from './validation-input.js';
 import Navigation from './navigation.js';
+import * as util from './utils.js';
 import {auth} from './firebaseconfig.js';
 
 // ---- Elements of DOM ---- //
@@ -70,7 +71,11 @@ $subscribe.addEventListener("submit", e => {
 
     } else {
 
-        console.log("email et mdp invalides");
+        const msgError = document.createElement("p");
+        msgError.classList.add("error");
+        msgError.innerHTML = "Votre adresse email et/ou mot de passe sont invalides";
+        $subscribe.appendChild(msgError);
+        util.removeElement(msgError);
 
     }
 
@@ -95,7 +100,11 @@ $connect.addEventListener("submit", e => {
 
     } else {
 
-        console.log("email et mdp incorrects");
+        const msgError = document.createElement("p");
+        msgError.classList.add("error");
+        msgError.innerHTML = "Votre adresse email et/ou mot de passe sont incorrects";
+        $connect.appendChild(msgError);
+        util.removeElement(msgError);
 
     }
 
