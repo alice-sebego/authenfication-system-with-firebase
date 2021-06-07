@@ -116,7 +116,9 @@ form{
     border: 1px solid #eee;
 }
 
-form, input, form > button{
+form, input, 
+form > button, 
+main button{
     border-radius: .3em;
 }
 
@@ -126,12 +128,15 @@ input{
     padding: .3em;
 }
 
-fieldset, form > button{
+fieldset, 
+form > button, 
+main button{
     border: none;
     padding: 0.5em;
 }
 
-form > button{
+form > button, 
+main button{
     display: block;
     margin: auto;
     width: 92%;
@@ -146,6 +151,34 @@ form > button{
     font-weight: 800;
 }
 
+main{
+    width: 65%;
+    margin: 3vh auto;
+    text-align: justify;
+    padding: 2vh 0;
+}
+
+main h2{
+    color: rgb(9, 91, 94);
+    text-transform: uppercase;
+}
+
+main button{
+    background-color: rgb(9, 91, 94);
+}
+
+main .chapo{
+    font-weight: bold;
+    margin: 3vh 0;
+}
+
+.blur{
+    filter: blur(.1em);
+}
+
+main > button{
+    text-transform: uppercase;
+}
 
 /* Responsive display */
 @media screen and (max-width: 700px){
