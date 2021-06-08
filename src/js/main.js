@@ -33,12 +33,15 @@ const $pwdConnection = document.querySelector("#pwdConnection");
 const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
 // Content of main
+const $readMore = document.querySelector("main > input[type='button']");
+console.log($readMore);
 const $main = document.querySelector("main");
 
 // Listening subscription and connection buttons
-const NavApp = new Navigation($subscription, $connection, $subscribe, $connect, $picture);
+const NavApp = new Navigation($subscription, $connection, $readMore, $subscribe, $connect, $picture);
 NavApp.subscriptionClick();
 NavApp.connectionClick();
+NavApp.readMoreClick();
 
 // Validate input's user who is subscribing
 const ValidateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);

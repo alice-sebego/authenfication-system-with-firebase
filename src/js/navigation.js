@@ -3,16 +3,18 @@
  * @class Navigation
  * @param {HTMLButtonElement} subscriptionBtn
  * @param {HTMLButtonElement} connectionBtn
+ * @param {HTMLInputElement} readMoreBtn
  * @param {HTMLFormElement} subscriptionForm
  * @param {HTMLFormElement} connectionForm
  * @param {HTMLPictureElement} picture
  */
 export default class Navigation{
     
-    constructor(subscriptionBtn, connectionBtn, subscriptionForm, connectionForm, picture){
+    constructor(subscriptionBtn, connectionBtn, readMoreBtn, subscriptionForm, connectionForm, picture){
         
         this.subscriptionBtn = subscriptionBtn;
         this.connectionBtn = connectionBtn;
+        this.readMoreBtn = readMoreBtn;
         this.subscriptionForm = subscriptionForm;
         this.connectionForm = connectionForm;
         this.picture = picture;
@@ -42,6 +44,19 @@ export default class Navigation{
             this.connectionForm.classList.replace("notdisplayed", "redisplay");
             this.picture.classList.replace("notdisplayed", "redisplay");
             
+        });
+    }
+
+    readMoreClick(){
+        this.readMoreBtn.addEventListener("click", () => {
+
+            if(this.subscriptionForm.classList.contains("redisplay")){
+                this.subscriptionForm.classList.replace("redisplay", "notdisplayed");
+            }
+        
+            this.connectionForm.classList.replace("notdisplayed", "redisplay");
+            this.picture.classList.replace("notdisplayed", "redisplay");
+        
         });
     }
 

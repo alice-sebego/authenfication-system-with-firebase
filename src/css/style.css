@@ -117,8 +117,7 @@ form{
 }
 
 form, input, 
-form > button, 
-main button{
+form > button{
     border-radius: .3em;
 }
 
@@ -129,14 +128,12 @@ input{
 }
 
 fieldset, 
-form > button, 
-main button{
+form > button{
     border: none;
     padding: 0.5em;
 }
 
-form > button, 
-main button{
+form > button{
     display: block;
     margin: auto;
     width: 92%;
@@ -152,7 +149,7 @@ main button{
 }
 
 main{
-    width: 65%;
+    width: 45%;
     margin: 3vh auto;
     text-align: justify;
     padding: 2vh 0;
@@ -163,8 +160,18 @@ main h2{
     text-transform: uppercase;
 }
 
-main button{
+main input[type="button"]{
+    display: block;
+    margin: auto;
+    width: 50%;
+    border: none;
+    padding: 1em;
     background-color: rgb(9, 91, 94);
+    color: white;
+    border-radius: .3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .09em;
 }
 
 main .chapo{
