@@ -21,8 +21,8 @@
         <nav>
             <button type="button"><i class="fas fa-bars"></i></button>
             <ul>
-                <li class="nav subscription" tabindex="0">S'inscrire</li>
-                <li class="nav connection" tabindex="0">Se connecter</li>
+                <li class="nav subscription">S'inscrire</li>
+                <li class="nav connection">Se connecter</li>
                 <li class="nav" id="disconnection" tabindex="0">Se déconnecter</li>
             </ul>
         </nav>
@@ -32,44 +32,46 @@
         <h2>Contenu privé</h2>
     </section>
     <section id="forms">
-        <h3>Inscrivez-vous ou connectez-vous</h3>
-            <div id="picture" class="notdisplayed">
-                <picture>
-                    <source srcset="./assets/illustration-courtesy-pexels-tembela-bohle.jpg">
-                    <img src="./assets/illustration-courtesy-pexels-tembela-bohle.jpg" alt="Rejoindre le groupe de discussion de foot">
-                </picture>
-            </div>
-            <form id="subscribe" class="notdisplayed">
-                <h3>Inscription</h3>
-                <fieldset id="fieldEmailsub">
-                    <label for="emailSubscription">Entrez votre e-mail</label>
-                    <input type="email" name="email-subscription" id="emailSubscription">
-                    <p id="infoMailSub"></p>
-                </fieldset>
-                <fieldset id="fieldPwdSub">
-                    <label for="pwdSubscription">Créez votre mot de passe</label>
-                    <input type="password" name="pwd-subscription" id="pwdSubscription">
-                    <p id="infoPwdSub"></p>
-                </fieldset>
-                <button type="submit">S'inscrire</button>
-                <p class="switchForm">Déjà inscrit ? <span class="connection">Connectez-vous</span></p>
-            </form>
+        <h3>
+            <span class="subscription">Inscrivez-vous</span> ou <span class="connection">connectez-vous</span>
+        </h3>
+        <div id="picture" class="notdisplayed">
+            <picture>
+                <source srcset="./assets/illustration-courtesy-pexels-tembela-bohle.jpg">
+                <img src="./assets/illustration-courtesy-pexels-tembela-bohle.jpg" alt="Rejoindre le groupe de discussion de foot">
+            </picture>
+        </div>
+        <form id="subscribe" class="notdisplayed">
+            <h3>Inscription</h3>
+            <fieldset id="fieldEmailsub">
+                <label for="emailSubscription">Entrez votre e-mail</label>
+                <input type="email" name="email-subscription" id="emailSubscription">
+                <p id="infoMailSub"></p>
+            </fieldset>
+            <fieldset id="fieldPwdSub">
+                <label for="pwdSubscription">Créez votre mot de passe</label>
+                <input type="password" name="pwd-subscription" id="pwdSubscription">
+                <p id="infoPwdSub"></p>
+            </fieldset>
+            <button type="submit">S'inscrire</button>
+            <p class="switchForm">Déjà inscrit ? <span class="connection">Connectez-vous</span></p>
+        </form>
 
-            <form id="connect" class="notdisplayed">
-                <h3>Connexion</h3>
-                <fieldset id="fieldEmailConnect">
-                    <label for="emailConnection">Entrez votre e-mail</label>
-                    <input type="email" name="email-connection" id="emailConnection">
-                    <p id="infoMailConx"></p>
-                </fieldset>
-                <fieldset id="fieldPwdConnect">
-                    <label for="pwdConnection">Entrez votre mot de passe</label>
-                    <input type="password" name="pwd-connection" id="pwdConnection">
-                    <p id="infoPwdConx"></p>
-                </fieldset>
-                <button type="submit">Se connecter</button>
-                <p class="switchForm">Vous n'avez pas de compte ? <span class="subscription">Inscrivez-vous</span></p>
-            </form>
+        <form id="connect" class="notdisplayed">
+            <h3>Connexion</h3>
+            <fieldset id="fieldEmailConnect">
+                <label for="emailConnection">Entrez votre e-mail</label>
+                <input type="email" name="email-connection" id="emailConnection">
+                <p id="infoMailConx"></p>
+            </fieldset>
+            <fieldset id="fieldPwdConnect">
+                <label for="pwdConnection">Entrez votre mot de passe</label>
+                <input type="password" name="pwd-connection" id="pwdConnection">
+                <p id="infoPwdConx"></p>
+            </fieldset>
+            <button type="submit">Se connecter</button>
+            <p class="switchForm">Vous n'avez pas de compte ? <span class="subscription">Inscrivez-vous</span></p>
+        </form>
     </section>
     <main>
         

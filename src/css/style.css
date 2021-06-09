@@ -62,6 +62,10 @@ h3{
     grid-area: title;
 }
 
+h3 span{
+    text-decoration: 2px dotted rgb(9, 91, 94) underline;
+}
+
 #picture{
     grid-area: leftside;
     padding-top: 1em; 

@@ -128,3 +128,7 @@ $disconnection.addEventListener("click", () => {
 if(window.innerWidth < 465){ $navigationUl.classList.add("notdisplayed") }
 
 $navigationBar.addEventListener("click", () => $navigationUl.classList.toggle("notdisplayed"));
+
+// Add tabindex attribute for each element with class "connection" & "subscription"
+util.addTabindex($connection);
+util.addTabindex($subscription);

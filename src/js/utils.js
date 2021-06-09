@@ -23,3 +23,13 @@ export const handleMsgError = (formElement, message) =>{
     formElement.appendChild(msgError);
     removeElement(msgError);
 }
+
+/**
+ * Add attribute Tabindex for each element of a collection
+ * @param {array} elements 
+ */
+export const addTabindex = (elements) => {
+    elements.forEach(element => {
+        element.setAttribute("tabindex", "0");
+    });
+}
