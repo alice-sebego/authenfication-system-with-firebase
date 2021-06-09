@@ -24,7 +24,7 @@ To start app on local server : `npm run start`
 
 In this project, I've used my own parameters from my personnal account on Google Cloud ;
 
-If you want to use your own parameters and script from Google Cloud Firebase, you must have or create your account ; Then, you've to create a project on firebase, follow instructions and copy/paste your parameters in order to replace my own script on ***firebaseconfig.js*** ;
+If you want to use your own parameters and script from Google Cloud Firebase, [you must have or create your account](https://firebase.google.com/ "Go to your interface of Firebase") ; Then, you've to create a project on firebase, follow instructions and copy/paste your parameters in order to replace my own script on ***firebaseconfig.js*** ;
 
 *NB* : In another file, I've created a variable which store the value of ApiKey from the object ***firebaseConfig*** of the file ***firebaseconfig.js***
 
