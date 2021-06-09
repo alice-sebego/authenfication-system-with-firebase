@@ -2,6 +2,7 @@ import _ from 'lodash';
 import Validation from './validation-input.js';
 import Navigation from './navigation.js';
 import * as util from './utils.js';
+import {contentMain} from './article-content';
 import {auth} from './firebaseconfig.js';
 
 // ---- Elements of DOM ---- //
@@ -32,10 +33,11 @@ const $emailConnection = document.querySelector("#emailConnection");
 const $pwdConnection = document.querySelector("#pwdConnection");
 const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
-// Content of main
-const $readMore = document.querySelector("main > input[type='button']");
-console.log($readMore);
+
+// Manage Content of main
 const $main = document.querySelector("main");
+$main.innerHTML = contentMain.forUserDisconnected;
+const $readMore = document.querySelector("main > input[type='button']");
 
 // Listening subscription and connection buttons
 const NavApp = new Navigation($subscription, $connection, $readMore, $subscribe, $connect, $picture);
@@ -97,6 +99,7 @@ $connect.addEventListener("submit", e => {
             
             $h2.innerHTML = `Vous avez accès à ce contenu`;
             $h3.innerHTML = `Vous êtes connecté(e)`;
+            $main.innerHTML = contentMain.forUserLogged;
         }, T => {
             util.handleMsgError($connect, `Le mot de passe est invalide ou l'utilisateur n'a pas de mot de passe. \n --- \n ${T.message}`);
         });
@@ -116,6 +119,7 @@ $disconnection.addEventListener("click", () => {
     then(() => {
         $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
         $h3.innerHTML = `Vous êtes déconnecté(e)`;
+        $main.innerHTML = contentMain.forUserDisconnected;
     });
 
 });
