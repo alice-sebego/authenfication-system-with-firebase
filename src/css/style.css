@@ -63,7 +63,7 @@ h3{
 }
 
 h3 span{
-    text-decoration: 2px dotted rgb(9, 91, 94) underline;
+    text-decoration: 2px dotted white underline;
 }
 
 #picture{
@@ -202,6 +202,20 @@ main .chapo{
 
 main > button{
     text-transform: uppercase;
+}
+
+footer{
+    margin-top: 10vh;
+    padding: 2vh 3vw;
+    text-align: center;
+    line-height: 1.8em;
+    box-shadow: -.1em 0 .3em rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: #333;
+}
+
+footer a{
+    color: white;
 }
 
 /* Responsive display */

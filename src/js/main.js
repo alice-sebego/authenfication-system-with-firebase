@@ -132,3 +132,7 @@ $navigationBar.addEventListener("click", () => $navigationUl.classList.toggle("n
 // Add tabindex attribute for each element with class "connection" & "subscription"
 util.addTabindex($connection);
 util.addTabindex($subscription);
+
+// Display current year on the footer
+const $year = document.querySelector("#year");
+util.displayCurrentYear($year);

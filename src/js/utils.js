@@ -2,8 +2,8 @@
  * Revome an element of DOM
  * @param {HTMLElement} element 
  */
-export const removeElement = (element) => {
-    
+export const removeElement = element => {    
+   
     setTimeout(() => {
         element.remove();
     }, 9500);
@@ -28,8 +28,15 @@ export const handleMsgError = (formElement, message) =>{
  * Add attribute Tabindex for each element of a collection
  * @param {array} elements 
  */
-export const addTabindex = (elements) => {
-    elements.forEach(element => {
-        element.setAttribute("tabindex", "0");
-    });
+export const addTabindex = elements => {
+    elements.forEach(element => element.setAttribute("tabindex", "0"));
+}
+
+/**
+ * Display cuurent year on the DOM
+ * @param {HTMLElement} element 
+ */
+export const displayCurrentYear = element =>{
+    const date = new Date(Date.now());
+    element.innerHTML = date.getFullYear();
 }

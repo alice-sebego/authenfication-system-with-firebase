@@ -1,4 +1,5 @@
-export const contentMain = {
+export const contentMain = 
+{
     forUserDisconnected : `
     <h2>Title of article</h2>
     <p class="chapo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facilis repellat fugit, aspernatur doloribus laboriosam nobis, aperiam voluptate consectetur amet similique. Dicta laboriosam sunt laudantium voluptas excepturi. Dicta, voluptatum necessitatibus.</p>
@@ -7,6 +8,7 @@ export const contentMain = {
     </p>
     <input type="button" class="connection" value="Connectez-vous"/>
     `,
+    
     forUserLogged : `
     <h2>Title of article</h2>
     <p class="chapo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident facilis repellat fugit, aspernatur doloribus laboriosam nobis, aperiam voluptate consectetur amet similique. Dicta laboriosam sunt laudantium voluptas excepturi. Dicta, voluptatum necessitatibus.</p>
