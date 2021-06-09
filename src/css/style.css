@@ -143,6 +143,18 @@ form > button{
     padding: .6em;
 }
 
+.switchForm{
+    font-size: .9em;
+    font-weight: bold;
+    margin-top: 1.5em;
+    text-align: justify;
+}
+
+.switchForm span{
+    color: rgb(9, 91, 94);
+    text-decoration: 2px dotted rgb(9, 91, 94) underline;
+}
+
 .error{
     color: red;
     padding: 0.5em;

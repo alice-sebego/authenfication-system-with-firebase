@@ -10,7 +10,7 @@ import {auth} from './firebaseconfig.js';
 // Navigation
 const $navigationBar = document.querySelector("nav > button");
 const $navigationUl = document.querySelector("nav > ul");
-const $subscription = document.querySelector("#subscription");
+const $subscription = document.querySelectorAll(".subscription");
 const $connection = document.querySelector("#connection");
 const $disconnection = document.querySelector("#disconnection");
 const $h2 = document.querySelector("h2");

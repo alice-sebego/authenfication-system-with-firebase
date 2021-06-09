@@ -21,7 +21,7 @@
         <nav>
             <button type="button"><i class="fas fa-bars"></i></button>
             <ul>
-                <li class="nav" id="subscription" tabindex="0">S'inscrire</li>
+                <li class="nav subscription" tabindex="0">S'inscrire</li>
                 <li class="nav" id="connection" tabindex="0">Se connecter</li>
                 <li class="nav" id="disconnection" tabindex="0">Se déconnecter</li>
             </ul>
@@ -51,7 +51,7 @@
                     <input type="password" name="pwd-subscription" id="pwdSubscription">
                     <p id="infoPwdSub"></p>
                 </fieldset>
-                <button type="submit">Envoyer</button>
+                <button type="submit">S'inscrire</button>
             </form>
 
             <form id="connect" class="notdisplayed">
@@ -66,7 +66,8 @@
                     <input type="password" name="pwd-connection" id="pwdConnection">
                     <p id="infoPwdConx"></p>
                 </fieldset>
-                <button type="submit">Envoyer</button>
+                <button type="submit">Se connecter</button>
+                <p class="switchForm">Vous n'avez pas de compte ? <span class="subscription">Inscrivez-vous</span></p>
             </form>
     </section>
     <main>

@@ -10,9 +10,9 @@
  */
 export default class Navigation{
     
-    constructor(subscriptionBtn, connectionBtn, readMoreBtn, subscriptionForm, connectionForm, picture){
+    constructor(subscriptionBtns, connectionBtn, readMoreBtn, subscriptionForm, connectionForm, picture){
         
-        this.subscriptionBtn = subscriptionBtn;
+        this.subscriptionBtns = subscriptionBtns;
         this.connectionBtn = connectionBtn;
         this.readMoreBtn = readMoreBtn;
         this.subscriptionForm = subscriptionForm;
@@ -22,16 +22,20 @@ export default class Navigation{
     }
 
     subscriptionClick(){
-        this.subscriptionBtn.addEventListener("click", () => {
+        
+        for(let btn of this.subscriptionBtns){
 
-            if(this.connectionForm.classList.contains("redisplay")){
-                this.connectionForm.classList.replace("redisplay", "notdisplayed");
-            }
+            btn.addEventListener("click", () => {
+    
+                if(this.connectionForm.classList.contains("redisplay")){
+                    this.connectionForm.classList.replace("redisplay", "notdisplayed");
+                }
+                 
+                this.subscriptionForm.classList.replace("notdisplayed", "redisplay");
+                this.picture.classList.replace("notdisplayed", "redisplay");
              
-            this.subscriptionForm.classList.replace("notdisplayed", "redisplay");
-            this.picture.classList.replace("notdisplayed", "redisplay");
-         
-        });
+            });
+        }
     }
 
     connectionClick(){
