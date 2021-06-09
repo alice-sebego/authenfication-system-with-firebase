@@ -16,7 +16,7 @@ const $navigationBar = document.querySelector("nav > button");
 const $navigationUl = document.querySelector("nav > ul");
 const $subscription = document.querySelectorAll(".subscription");
 const $connection = document.querySelectorAll(".connection");
-const $disconnection = document.querySelector("#disconnection");
+const $disconnection = document.querySelectorAll(".disconnection");
 const $h2 = document.querySelector("h2");
 // Forms elements
 const $h3 = document.querySelector("#forms > h3");
@@ -113,16 +113,20 @@ $connect.addEventListener("submit", e => {
 });
 
 // Manage Disconnection's user
-$disconnection.addEventListener("click", () => {
-    
-    auth.signOut().
-    then(() => {
-        $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
-        $h3.innerHTML = `Vous êtes déconnecté(e)`;
-        $main.innerHTML = contentMain.forUserDisconnected;
-    });
+for(let btn of $disconnection){
 
-});
+    btn.addEventListener("click", () => {
+        
+        auth.signOut().
+        then(() => {
+            $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
+            $h3.innerHTML = `Vous êtes déconnecté(e)`;
+            $main.innerHTML = contentMain.forUserDisconnected;
+        });
+    
+    });
+    
+}
 
 // Handle behavior of navigation when window's width < 465 px 
 if(window.innerWidth < 465){ $navigationUl.classList.add("notdisplayed") }
@@ -132,6 +136,7 @@ $navigationBar.addEventListener("click", () => $navigationUl.classList.toggle("n
 // Add tabindex attribute for each element with class "connection" & "subscription"
 util.addTabindex($connection);
 util.addTabindex($subscription);
+util.addTabindex($disconnection);
 
 // Display current year on the footer
 const $year = document.querySelector("#year");
