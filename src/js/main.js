@@ -62,23 +62,20 @@ $subscribe.addEventListener("submit", e => {
         auth.createUserWithEmailAndPassword($emailSubscription.value, $pwdSubscription.value).
         then( cred => {
             console.log(cred);
+            console.log(cred.user);
+            $subscribe.reset();
+    
+            $subscribe.classList.replace("redisplay", "notdisplayed");
+            $picture.classList.replace("redisplay", "notdisplayed");
+            
+            $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
+            $h3.innerHTML = `Vous êtes inscrit(e)`;
         });
 
-        $subscribe.reset();
-
-        $subscribe.classList.replace("redisplay", "notdisplayed");
-        $picture.classList.replace("redisplay", "notdisplayed");
-        
-        $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
-        $h3.innerHTML = `Vous êtes inscrit(e)`;
 
     } else {
 
-        const msgError = document.createElement("p");
-        msgError.classList.add("error");
-        msgError.innerHTML = "Votre adresse email et/ou mot de passe sont invalides";
-        $subscribe.appendChild(msgError);
-        util.removeElement(msgError);
+        util.handleMsgError($subscribe, "Votre adresse email et/ou mot de passe sont invalides");
 
     }
 
@@ -92,22 +89,21 @@ $connect.addEventListener("submit", e => {
     if(ValidateConnection.isEmailvalid){
 
         auth.signInWithEmailAndPassword($emailConnection.value, $pwdConnection.value).
-        then( cred => console.log("Vous êtes connecté(e) "+ cred.user) );
-
-        $connect.reset();
-        $connect.classList.replace("redisplay", "notdisplayed");
-        $picture.classList.replace("redisplay", "notdisplayed");
-        
-        $h2.innerHTML = `Vous avez accès à ce contenu`;
-        $h3.innerHTML = `Vous êtes connecté(e)`;
+        then( cred => {
+            console.log("Vous êtes connecté(e) "+ cred.user);
+            $connect.reset();
+            $connect.classList.replace("redisplay", "notdisplayed");
+            $picture.classList.replace("redisplay", "notdisplayed");
+            
+            $h2.innerHTML = `Vous avez accès à ce contenu`;
+            $h3.innerHTML = `Vous êtes connecté(e)`;
+        }, T => {
+            util.handleMsgError($connect, `Le mot de passe est invalide ou l'utilisateur n'a pas de mot de passe. \n --- \n ${T.message}`);
+        });
 
     } else {
 
-        const msgError = document.createElement("p");
-        msgError.classList.add("error");
-        msgError.innerHTML = "Votre adresse email et/ou mot de passe sont incorrects";
-        $connect.appendChild(msgError);
-        util.removeElement(msgError);
+        util.handleMsgError($connect, "Votre adresse email est incorrect");
 
     }
 
@@ -117,10 +113,10 @@ $connect.addEventListener("submit", e => {
 $disconnection.addEventListener("click", () => {
     
     auth.signOut().
-    then(() => console.log("Vous êtes déconnecté(e)"));
-
-    $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
-    $h3.innerHTML = `Vous êtes déconnecté(e)`;
+    then(() => {
+        $h2.innerHTML = `Connectez-vous pour accéder à ce contenu`;
+        $h3.innerHTML = `Vous êtes déconnecté(e)`;
+    });
 
 });
 
