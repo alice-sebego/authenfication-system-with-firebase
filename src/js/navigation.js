@@ -1,20 +1,18 @@
 /**
  * Manage event's click on subscription and connection buttons
  * @class Navigation
- * @param {HTMLButtonElement} subscriptionBtn
- * @param {HTMLButtonElement} connectionBtn
- * @param {HTMLInputElement} readMoreBtn
+ * @param {HTMLButtonElement} subscriptionBtns
+ * @param {HTMLButtonElement} connectionBtns
  * @param {HTMLFormElement} subscriptionForm
  * @param {HTMLFormElement} connectionForm
  * @param {HTMLPictureElement} picture
  */
 export default class Navigation{
     
-    constructor(subscriptionBtns, connectionBtn, readMoreBtn, subscriptionForm, connectionForm, picture){
+    constructor(subscriptionBtns, connectionBtns, subscriptionForm, connectionForm, picture){
         
         this.subscriptionBtns = subscriptionBtns;
-        this.connectionBtn = connectionBtn;
-        this.readMoreBtn = readMoreBtn;
+        this.connectionBtns = connectionBtns;
         this.subscriptionForm = subscriptionForm;
         this.connectionForm = connectionForm;
         this.picture = picture;
@@ -39,29 +37,20 @@ export default class Navigation{
     }
 
     connectionClick(){
-        this.connectionBtn.addEventListener("click", () => {
-
-            if(this.subscriptionForm.classList.contains("redisplay")){
-                this.subscriptionForm.classList.replace("redisplay", "notdisplayed");
-            }
         
-            this.connectionForm.classList.replace("notdisplayed", "redisplay");
-            this.picture.classList.replace("notdisplayed", "redisplay");
+        for(let btn of this.connectionBtns){
+
+            btn.addEventListener("click", () => {
+    
+                if(this.subscriptionForm.classList.contains("redisplay")){
+                    this.subscriptionForm.classList.replace("redisplay", "notdisplayed");
+                }
             
-        });
-    }
-
-    readMoreClick(){
-        this.readMoreBtn.addEventListener("click", () => {
-
-            if(this.subscriptionForm.classList.contains("redisplay")){
-                this.subscriptionForm.classList.replace("redisplay", "notdisplayed");
-            }
-        
-            this.connectionForm.classList.replace("notdisplayed", "redisplay");
-            this.picture.classList.replace("notdisplayed", "redisplay");
-        
-        });
+                this.connectionForm.classList.replace("notdisplayed", "redisplay");
+                this.picture.classList.replace("notdisplayed", "redisplay");
+                
+            });
+        }
     }
 
 }

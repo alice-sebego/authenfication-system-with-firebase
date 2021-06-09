@@ -7,11 +7,15 @@ import {auth} from './firebaseconfig.js';
 
 // ---- Elements of DOM ---- //
 
+// Manage Content of main
+const $main = document.querySelector("main");
+$main.innerHTML = contentMain.forUserDisconnected;
+
 // Navigation
 const $navigationBar = document.querySelector("nav > button");
 const $navigationUl = document.querySelector("nav > ul");
 const $subscription = document.querySelectorAll(".subscription");
-const $connection = document.querySelector("#connection");
+const $connection = document.querySelectorAll(".connection");
 const $disconnection = document.querySelector("#disconnection");
 const $h2 = document.querySelector("h2");
 // Forms elements
@@ -34,16 +38,12 @@ const $pwdConnection = document.querySelector("#pwdConnection");
 const $infoMailConx = document.querySelector("#infoMailConx");
 const $infoPwdConx = document.querySelector("#infoPwdConx");
 
-// Manage Content of main
-const $main = document.querySelector("main");
-$main.innerHTML = contentMain.forUserDisconnected;
-const $readMore = document.querySelector("main > input[type='button']");
+// ---- End of list for Elements of DOM ---- //
 
 // Listening subscription and connection buttons
-const NavApp = new Navigation($subscription, $connection, $readMore, $subscribe, $connect, $picture);
+const NavApp = new Navigation($subscription, $connection, $subscribe, $connect, $picture);
 NavApp.subscriptionClick();
 NavApp.connectionClick();
-NavApp.readMoreClick();
 
 // Validate input's user who is subscribing
 const ValidateSubscription = new Validation($fieldEmailsub, $fieldPwdSub, $emailSubscription, $pwdSubscription, $infoMailSub, $infoPwdSub);
