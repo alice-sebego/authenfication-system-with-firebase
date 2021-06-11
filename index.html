@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page d'inscription et de connexion créée avec JavaScript vanilla et Firebase">
     <!-- CSS -->
     <link rel="stylesheet" href="./src/css/style.css">
     <!-- Fontawesome -->
@@ -44,13 +45,13 @@
         <form id="subscribe" class="notdisplayed">
             <h3>Inscription</h3>
             <fieldset id="fieldEmailsub">
-                <label for="emailSubscription">Entrez votre e-mail</label>
-                <input type="email" name="email-subscription" id="emailSubscription">
+                <label for="emailSubscription">Entrez votre e-mail *</label>
+                <input type="email" name="email-subscription" id="emailSubscription" aria-describedby="infoMailSub" autocomplete="email" autofocus required>
                 <p id="infoMailSub"></p>
             </fieldset>
             <fieldset id="fieldPwdSub">
-                <label for="pwdSubscription">Créez votre mot de passe</label>
-                <input type="password" name="pwd-subscription" id="pwdSubscription">
+                <label for="pwdSubscription">Créez votre mot de passe * </label>
+                <input type="password" name="pwd-subscription" id="pwdSubscription" aria-describedby="infoPwdSub" required>
                 <p id="infoPwdSub"></p>
             </fieldset>
             <button type="submit">S'inscrire</button>
@@ -61,12 +62,12 @@
             <h3>Connexion</h3>
             <fieldset id="fieldEmailConnect">
                 <label for="emailConnection">Entrez votre e-mail</label>
-                <input type="email" name="email-connection" id="emailConnection">
+                <input type="email" name="email-connection" id="emailConnection" aria-describedby="infoMailConx" autocomplete="email" autofocus>
                 <p id="infoMailConx"></p>
             </fieldset>
             <fieldset id="fieldPwdConnect">
                 <label for="pwdConnection">Entrez votre mot de passe</label>
-                <input type="password" name="pwd-connection" id="pwdConnection">
+                <input type="password" name="pwd-connection" id="pwdConnection" aria-describedby="infoPwdConx" autocomplete="current-password">
                 <p id="infoPwdConx"></p>
             </fieldset>
             <button type="submit">Se connecter</button>
